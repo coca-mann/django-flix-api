@@ -5,6 +5,7 @@ NATIONALITY_CHOICES = (
     ('USA', 'Estados Unidos'),
     ('BRAZIL', 'Brasil'),
     ('FRANCE', 'França'),
+    ('AT', 'Áustria'),
 )
 
 class Actor(models.Model):

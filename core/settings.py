@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'apps.actors',
     'apps.movies',
     'apps.reviews',
+    'apps.authentication',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [

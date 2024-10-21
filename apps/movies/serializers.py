@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from apps.movies.models import Movie
+from django.db.models import Avg
 
 
 class MovieSerializer(serializers.ModelSerializer):
@@ -10,7 +11,10 @@ class MovieSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     def get_rate(self, obj):
-        return 5
+        rate = obj.reviews.aggregate(Avg('stars'))['stars__avg']
+        if rate:
+            return round(rate, 1)
+        return None
 
     def validate_release_date(self, value):
         if value.year < 1900:

@@ -1,3 +1,7 @@
+"""
+
+Código não utilizado mais
+
 from rest_framework import permissions
 
 class GenrePermissionClass(permissions.BasePermission):
@@ -12,3 +16,6 @@ class GenrePermissionClass(permissions.BasePermission):
         if request.method == 'DELETE':
             return request.user.has_perm('genres.delete_genre')
         return False
+
+
+"""

@@ -88,6 +88,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME':'flixapi',
+        'HOST': os.getenv('PSQL_HOST'),
         'USER': os.getenv('PSQL_USER'),
         'PASSWORD': os.getenv('PSQL_PASSWORD'),
         'PORT': '5432'
